@@ -5,7 +5,7 @@ local Library = loadstring(game:HttpGet(repo .. 'Library.lua'))()
 local ThemeManager = loadstring(game:HttpGet('https://pastebin.com/raw/WKU5e2CN'))()
 local SaveManager = loadstring(game:HttpGet(repo .. 'addons/SaveManager.lua'))()
 
-		getgenv()._Cameras = {
+		getgenv()._Camera = {
 			Toggle = false,
 			Pos = nil,
 			X_Offset = 0,
