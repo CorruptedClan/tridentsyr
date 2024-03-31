@@ -654,4 +654,301 @@ Tp:AddButton({
         Title = "Middle Room",
         Description = "",
         Callback = function()
-            TeleportTo(CFrame.new(-209.951859, 30.4590473, -789.723877, -0.0485812724, 6.74905039e-08, 0.998819232, 1.19352916e-09, 1, -6.75122394
+            TeleportTo(CFrame.new(-209.951859, 30.4590473, -789.723877, -0.0485812724, 6.74905039e-08, 0.998819232, 1.19352916e-09, 1, -6.75122394e-08, -0.998819232, -2.08771045e-09, -0.0485812724))
+			end
+})
+
+Tp:AddButton({
+        Title = "Pillar (Scary Marry)",
+        Description = "",
+        Callback = function()
+            TeleportTo(CFrame.new(-1501.49597, -325.156891, -1060.63367, -0.691015959, 7.43958628e-09, 0.722839475, -5.03345055e-09, 1, -1.51040194e-08, -0.722839475, -1.40754954e-08, -0.691015959))
+        end
+})
+
+Tp:AddButton({
+        Title = "Outside Loot",
+        Description = "",
+        Callback = function()
+            TeleportTo(game:GetService("Workspace").OutsideParts:FindFirstChildWhichIsA("Part", true).CFrame + Vector3.new(10, 0, 0))
+        end
+})
+
+Tp:AddButton({
+        Title = "Experiment Room",
+        Description = "",
+        Callback = function()
+            TeleportTo(game:GetService("Workspace").Final.Factory.RedDesk.Drawer:GetChildren()[2].CFrame + Vector3.new(20, 0, 0))
+        end
+})
+
+Tp:AddButton({
+        Title = "Rainbow Pizza",
+        Description = "",
+        Callback = function()
+            TeleportTo(game:GetService("Workspace").RainbowPizzaBox.CFrame)
+        end
+})
+
+--teleport (npc's)
+local Npc = Tabs.Tp:AddSection("TP | NPC's")
+
+Npc:AddButton({
+        Title = "Secret Agent (Bradley)",
+        Description = "",
+        Callback = function()
+            TeleportTo(CFrame.new(-281.792053, 95.4500275, -790.556946, -0.116918251, -7.95074726e-08, -0.993141532, -2.79918044e-09, 1, -7.97270019e-08, 0.993141532, -6.54155974e-09, -0.116918251))
+        end
+})
+        
+        Npc:AddButton({
+        Title = "Twando (that dog)",
+        Description = "",
+        Callback = function()
+            TeleportTo(CFrame.new(-257.56839, 29.4499969, -910.452637, -0.238445505, 7.71292363e-09, 0.971155882, 1.2913591e-10, 1, -7.91029819e-09, -0.971155882, -1.76076387e-09, -0.238445505))
+        end
+})
+        
+        Npc:AddButton({
+        Title = "Uncle Pete",
+        Description = "",
+        Callback = function()
+            TeleportTo(CFrame.new(-294.208923, 63.4182587, -737.712036, -0.998669028, -7.34403613e-08, -0.05157727, -7.2258743e-08, 1, -2.47743781e-08, 0.05157727, -2.1014495e-08, -0.998669028))
+        end
+})
+
+--secret ending stuff
+local End = Tabs.Ending:AddSection("Teleport Stuff")
+
+End:AddButton({
+        Title = "Gold Crowbar",
+        Description = "",
+        Callback = function()
+            TeleportTo(CFrame.new(-147.337204, 29.4477005, -929.365295, 0.756779075, 4.53537341e-09, -0.653670728, 5.82708326e-09, 1, 1.36845468e-08, 0.653670728, -1.4165173e-08, 0.756779075))
+        end
+})
+
+End:AddButton({
+        Title = "Purple Mask",
+        Description = "",
+        Callback = function()
+            TeleportTo(CFrame.new(102.560722, 29.2477055, -976.389954, -0.951403797, 3.76210636e-08, -0.307946175, 1.89752569e-08, 1, 6.35433466e-08, 0.307946175, 5.46120233e-08, -0.951403797))
+        end
+})
+
+End:AddButton({
+        Title = "Homeless Kid",
+        Description = "",
+        Callback = function()
+            TeleportTo(CFrame.new(-79.4871826, 29.4477024, -932.782715, -0.215949073, 3.18771427e-08, 0.976404607, -7.60385461e-08, 1, -4.94647345e-08, -0.976404607, -8.49262562e-08, -0.215949073))
+        end
+})
+
+--battle
+local Combat = Tabs.Battle:AddSection("Combat")
+
+Combat:AddButton({
+        Title = "Kill All",
+        Description = "",
+        Callback = function()
+            KillEnemies()
+        end
+})
+
+local Toggle = Combat:AddToggle("KillAll", {Title = "Kill All (Loop)", Default = false })
+Toggle:OnChanged(function(Value)
+        getgenv().KillAllLoop = Value
+			while KillAllLoop do
+				for i = 1, 3 do
+					KillEnemies()
+				end
+				task.wait(.1)
+			end
+end)
+
+Combat:AddButton({
+        Title = "Bring All",
+        Description = "",
+        Callback = function()
+            BringAllEnemies()
+        end
+})
+
+
+
+--misc
+local Player = Tabs.Misc:AddSection("Local Player")
+
+local Slider = Player:AddSlider("Speed", {
+        Title = "Walk Speed",
+        Description = "makes you go vrooom",
+        Default = 50,
+        Min = 16,
+        Max = 300,
+        Rounding = 1,
+        Callback = function(Value)
+            ModifiedWalkspeed = Value
+        end
+    })
+Slider:OnChanged(function(Value)
+        ModifiedWalkspeed = Value
+end)
+
+local Slider = Player:AddSlider("Jump", {
+        Title = "Jump Power",
+        Description = "makes you go to the moon",
+        Default = 50,
+        Min = 16,
+        Max = 300,
+        Rounding = 1,
+        Callback = function(Value)
+            ModifiedJumpPower = Value
+        end
+    })
+Slider:OnChanged(function(Value)
+        ModifiedJumpPower = Value
+end)
+
+local Toggle = Player:AddToggle("EnableSpeed", {Title = "Toggle Walk Speed", Default = false })
+Toggle:OnChanged(function(Value)
+        if Value == true then
+				OriginalWalkspeed = LocalPlayer.Character.Humanoid.WalkSpeed
+				LocalPlayer.Character.Humanoid.WalkSpeed = ModifiedWalkspeed
+			else
+				LocalPlayer.Character.Humanoid.WalkSpeed = OriginalWalkspeed
+			end
+end)
+
+local Toggle = Player:AddToggle("EnableJump", {Title = "Toggle Jump Power", Default = false })
+Toggle:OnChanged(function(Value)
+        if Value == true then
+				OriginalJumpPower = LocalPlayer.Character.Humanoid.JumpPower
+				LocalPlayer.Character.Humanoid.JumpPower = ModifiedJumpPower
+				LocalPlayer.Character.Humanoid.UseJumpPower = Value
+			else
+				LocalPlayer.Character.Humanoid.JumpPower = OriginalJumpPower
+			end
+end)
+
+local Toggle = Player:AddToggle("Noclip", {Title = "Noclip (On/Off)", Default = false })
+Toggle:OnChanged(function(Value)
+        getgenv().Noclipping = Value
+			if Noclipping == true then
+				spawn(function()
+					while Noclipping == true do
+						Noclip(false)
+						task.wait(.05)
+					end
+				end)
+			end
+			if Noclipping == false then
+				Noclip(true)
+			end
+end)
+
+local Toggle = Player:AddToggle("Brightness", {Title = "Full Bright", Default = false })
+Toggle:OnChanged(function(Value)
+        if Value == true then
+				Lighting.Brightness = 1
+				Lighting.FogEnd = 999999
+				Lighting.GlobalShadows = false
+			else
+				Lighting.Brightness = OriginalBrightness
+				Lighting.FogEnd = OriginalFog
+				Lighting.GlobalShadows = GlobalShadows
+			end
+end)
+
+local OtherMisc = Tabs.Misc:AddSection("Other")
+
+local Toggle = OtherMisc:AddToggle("ESP", {Title = "ESP (Hidden Items)", Default = false })
+Toggle:OnChanged(function(Value)
+        if Value == true then
+				for i, v in pairs(game:GetService("Workspace").Hidden:GetChildren()) do
+					local highlight = Instance.new("Highlight")
+					highlight.Parent = v
+					highlight.FillColor = Color3.fromRGB(255, 0, 255)
+					highlight.FillTransparency = 0
+					highlight.OutlineTransparency = 0
+					highlight.OutlineColor = Color3.fromRGB(0, 0, 255)
+				end
+			else
+				for i, v in pairs(game:GetService("Workspace").Hidden:GetChildren()) do
+					if v:FindFirstChild("Highlight") then
+						v:FindFirstChild("Highlight"):Destroy()
+					end
+				end
+			end
+end)
+
+local Toggle = OtherMisc:AddToggle("Cash", {Title = "Auto Collect Cash", Default = false })
+Toggle:OnChanged(function(Value)
+        getgenv().CollectAllCash = Value
+
+			while CollectAllCash do
+				CollectCash()
+				task.wait(1)
+			end
+end)
+
+local Toggle = OtherMisc:AddToggle("Quests", {Title = "Auto Claim Uncle Pete's Quests", Default = false })
+Toggle:OnChanged(function(Value)
+        getgenv().AutoPete = Value
+
+			while AutoPete do
+				ClickPete()
+				task.wait(10)
+			end
+end)
+
+OtherMisc:AddButton({
+        Title = "Get Outside Items",
+        Description = "",
+        Callback = function()
+            GetAllOutsideItems()
+        end
+    })
+    
+    local Misc = Tabs.Misc:AddSection("Misc")
+    
+    Misc:AddButton({
+        Title = "Mobile Keyboard",
+        Description = "launches a GUI that mimics a Keyboard.",
+        Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+        end
+    })
+    
+Misc:AddButton({
+        Title = "Infinite Yield",
+        Description = "I dont think i have to explain what this is.",
+        Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source", true))()
+        end
+    })
+    
+    --credits
+    local Credits = Tabs.Credits:AddSection("Credits")
+
+Credits:AddParagraph({
+        Title = "Credits",
+        Content = "Script was made by Frostbite Development Team©.\nAll Rights Reserved"
+    })
+
+Credits:AddButton({
+        Title = "Copy Discord Link",
+        Description = "https://dsc.gg/frozen-x",
+        Callback = function()
+            setclipboard("https://dsc.gg/frozen-x")
+        end
+    })
+    
+local Showcase = Tabs.Credits:AddSection("Awesome Showcasers")
+
+Showcase:AddParagraph({
+        Title = "None :(",
+        Content = "no awesome showcasers yet *womp womp*"
+    })
+    
+    print("FroZen Hub V1 | Propriety of Frostbite Development Team©")
+    ScriptLoaded = true
