@@ -1,4 +1,3 @@
-
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
@@ -265,6 +264,24 @@ if targetPart then
     rootPart.CFrame = CFrame.new(targetPart.Position)
 else
     warn("Target part not found")
+    end
+elseif Game.PlaceId == place22 then
+local targetPart = game.Workspace.WorldMap.Checkpoints["99"]:FindFirstChild("Pole")
+
+if targetPart then
+    local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+    rootPart.CFrame = CFrame.new(targetPart.Position)
+else
+    warn("Target part not found")
+end
+elseif Game.PlaceId == place23 then
+local targetPart = game.Workspace.WorldMap.Checkpoints["99"]:FindFirstChild("Pole")
+
+if targetPart then
+    local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+    rootPart.CFrame = CFrame.new(targetPart.Position)
+else
+    warn("Target part not found")
 end
 end
 end
@@ -293,6 +310,8 @@ place18 = 16487157604
 place19 = 16592062151
 place20 = 16680372730
 place21 = 16836441123
+place22 = 16928682102
+place23 = 16928680907
 placeSpring = 16592072587
 placeCyber = 15998821941
 placeWinter = 15652688446
@@ -303,7 +322,7 @@ local Main = Tabs.Main:AddSection("Bike")
 
 local Dropdown = Main:AddDropdown("Bike Select", {
         Title = "Select Bike",
-        Values = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,90,91,92,93,94,95},
+        Values = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,90,91,92,93,94,95,96,97,98,99,100,101,102,103},
         Multi = false,
         Default = 1,
 })
