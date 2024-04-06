@@ -9,7 +9,7 @@ KeySystemUI.New({
 repeat task.wait() until KeySystemUI.Finished() or KeySystemUI.Closed
 if KeySystemUI.Finished() and KeySystemUI.Closed == false then
     print("Key verified, can load script") loadstring(game:HttpGet("https://raw.githubusercontent.com/CorruptedClan/tridentsyr/main/FroZenHubV1/Loader/LoaderUI.lua"))()
-primt("script loaded")
+print("script loaded")
 else
     print("Player closed the GUI.")
 end
