@@ -75,7 +75,9 @@ button.MouseButton1Click:Connect(function()
     button.Text = tostring(toggleState)
     getgenv().Spam = toggleState
     while getgenv().Spam do
-game.ReplicatedStorage.Remotes.ParryButtonPress:Fire()
+--game.ReplicatedStorage.Remotes.ParryButtonPress:Fire()
+game:GetService("VirtualInputManager"):SendKeyEvent(true, "F" , false , game)
+--Enum.KeyCode.F
         wait(0.01)
     end
 end)
@@ -105,7 +107,8 @@ local function IsTarget() -- Returns true if we are the current target.
     return (Player.Character and Player.Character:FindFirstChild("Highlight"))
 end
 local function Parry() -- Parries.
-    Remotes:WaitForChild("ParryButtonPress"):Fire()
+    --Remotes:WaitForChild("ParryButtonPress"):Fire()
+game:GetService("VirtualInputManager"):SendKeyEvent(true, "F" , false , game)
 end
 Balls.ChildAdded:Connect(function(Ball)
     if not VerifyBall(Ball) then
@@ -175,6 +178,11 @@ Toggle:OnChanged(function(Value)
         end
 end)
 
+Mainy:AddParagraph({
+        Title = "PLEASE READ",
+        Content = "as of the last update blade ball added an anticheat wich managed to stop most auto parry scripts. we are forced to go to keypress to do anything wich is a bad and unuseful way of parrying but also the only way.\nUntil a new bypass is released this will be the only parry method.\nThe main concern is that mobile players will be unable to move while the deflection happens.\nMore info soon.\n • Frostbite Dev Team"
+    })
+
 Mainy:AddButton({
         Title = "Launch Spam Parry GUI",
         Description = "with a toggle that will be easier to turn on/off during combat \n instead of having to reopen the FroZen GUI",
@@ -183,13 +191,13 @@ Mainy:AddButton({
         end
     })
     
-local Toggle = Mainy:AddToggle("Hold F/M2", {Title = "Hold Parry button for spam", Default = false })
+--[[local Toggle = Mainy:AddToggle("Hold F/M2", {Title = "Hold Parry button for spam", Default = false })
 Toggle:OnChanged(function(Value)
   getgenv().exeSpam = Value
      if getgenv().exeSpam then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Spam",true))()
         end
-end)
+end)]]
 
 local Toggle = Mainy:AddToggle("Freeze Spammy", {Title = "Freeze Ability Spammer", Default = false })
 Toggle:OnChanged(function(Value)
