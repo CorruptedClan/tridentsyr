@@ -19,14 +19,14 @@ local Tabs = {
     Update = Window:AddTab({ Title = "Changelogs", Icon = "clipboard-list" }),
     Event = Window:AddTab({ Title = "Event/Giveaways", Icon = "gift" })
 }
---main scripts
+--[[main scripts
 Tabs.Main:AddButton({
         Title = "Blade Ball",
         Description = "",
         Callback = function()
             BladeBall_Script()
         end
-    })
+    })]]
     
 Tabs.Main:AddButton({
         Title = "Break In 2",
