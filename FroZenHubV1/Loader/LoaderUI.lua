@@ -94,34 +94,8 @@ Update2:AddParagraph({
     })
  
 --giveaways
-local Giveaway = Tabs.Event:AddSection("Giveaways")
-Giveaway:AddParagraph({
-        Title = "FREE 1 WEEK/MONTH/LIFETIME PREMIUM KEYS GIVEAWAY",
-        Content = "How to Enter?\n1. Like our scripts at https://rscripts.net and https://scriptblox.com\n2. Join the discord at https://dsc.gg/frozen-x\n3. go to the giveaway page"
- })
- 
- Giveaway:AddButton({
-        Title = "Get Rscripts link for step 1",
-        Description = "",
-        Callback = function()
-            setclipboard("https://rscripts.net/script/frozen-hub-or-blade-ball-or-easy-to-use-QHqB")
-        end
-    })
- Giveaway:AddButton({
-        Title = "Get Scriptblox link for step 1",
-        Description = "",
-        Callback = function()
-            setclipboard("https://scriptblox.com/script/Slap-Battles-FroZen-Hub-V1-Easy-to-use-11918")
-        end
-    })
- Giveaway:AddButton({
-        Title = "Get Discord link for step 2",
-        Description = "",
-        Callback = function()
-            setclipboard("https://dsc.gg/frozen-x")
-        end
-    })
  local Event = Tabs.Event:AddSection("Event")
+
  Event:AddParagraph({
         Title = "Youtube Event",
         Content = "making videos showcasing FroZen Hub V1 on youtube and using the #FroZenHub Tag will give you a chance to qualify and let you to earn some neat rewards!\n Reward List:\n • free 1 week key\n • free 1 month key\n • free lifetime key\n • 50-200 robux\n • 300-400 robux"
