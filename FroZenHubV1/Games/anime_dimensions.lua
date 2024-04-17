@@ -178,16 +178,16 @@ local Window = Fluent:CreateWindow({
 })
 
 local Tabs = {
-    Main = Window:AddTab({ Title = "Main", Icon = "" }),
-    Extra = Window:AddTab({ Title = "Extra", Icon = "" }),
-    TP = Window:AddTab({ Title = "Teleport", Icon = "" }),
-    AutoSP = Window:AddTab({ Title = "Auto S & P", Icon = "" }),
-    Raid = Window:AddTab({ Title = "Raid", Icon = "" }),
-    Afk = Window:AddTab({ Title = "AFK", Icon = "" }),
-    Notify = Window:AddTab({ Title = "Notify", Icon = "" }),
-    A = Window:AddTab({ Title = "Auto Sell", Icon = "" }),
-    B = Window:AddTab({ Title = "Auto Spin", Icon = "" }),
-    C = Window:AddTab({ Title = "Auto Claim", Icon = "" }),
+    Main = Window:AddTab({ Title = "Main", Icon = "map-pin" }),
+    Extra = Window:AddTab({ Title = "Extra", Icon = "locate" }),
+    TP = Window:AddTab({ Title = "Teleport", Icon = "map" }),
+    AutoSP = Window:AddTab({ Title = "Auto S & P", Icon = "scan" }),
+    Raid = Window:AddTab({ Title = "Raid", Icon = "shield-alert" }),
+    Afk = Window:AddTab({ Title = "AFK", Icon = "pause" }),
+    Notify = Window:AddTab({ Title = "Notify", Icon = "bell" }),
+    A = Window:AddTab({ Title = "Auto Sell", Icon = "coins" }),
+    B = Window:AddTab({ Title = "Auto Spin", Icon = "life-buoy" }),
+    C = Window:AddTab({ Title = "Auto Claim", Icon = "archive-restore" }),
     Misc = Window:AddTab({ Title = "Misc", Icon = "component" }),
     Credits = Window:AddTab({ Title = "Credits", Icon = "copyright" })
 }
