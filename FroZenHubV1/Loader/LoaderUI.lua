@@ -4,7 +4,7 @@ local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.
 
 local Window = Fluent:CreateWindow({
     Title = "FroZen Hub V1",
-    SubTitle = "Loader | v.0.1.9",
+    SubTitle = "Loader | v.0.2.12",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
     Acrylic = false, -- The blur may be detectable, setting this to false disables blur entirely
@@ -20,6 +20,14 @@ local Tabs = {
     Event = Window:AddTab({ Title = "Event/Giveaways", Icon = "gift" })
 }
 --main scripts
+Tabs.Main:AddButton({
+        Title = "Anime Dimensions",
+        Description = "",
+        Callback = function()
+            AnimeDimensions_Script()
+        end
+    })
+
 Tabs.Main:AddButton({
         Title = "Blade Ball",
         Description = "",
@@ -92,14 +100,15 @@ Update2:AddParagraph({
         Title = "April 6th 2024:",
         Content = "Obby but You're on a Bike:\n • Updated for World 22 and 23\n • Updated 'Get Bike' to all 103 bikes\n • Fixed Crashes\n • Improved Stability\n\nNEW GAME ADDED:\n • Murder Mystery 2 [BETA]\n\nLoader:\n • Added Events/Giveaway page\n • Added this Chnagelog page\n • Improved raw performance upon launching the script"
     })
+    
+local Update3 = Tabs.Update:AddSection("Update 3")
+Update3:AddParagraph({
+        Title = "April 17th 2024:",
+        Content = "Obby but You're on a Bike:\n • Updated for World 24\n\nNEW GAME ADDED:\n • Anime Dimensions\n\nLoader:\n • Current giveaways/Events ended"
+    })
  
 --giveaways
- local Event = Tabs.Event:AddSection("Event")
-
- Event:AddParagraph({
-        Title = "Youtube Event",
-        Content = "making videos showcasing FroZen Hub V1 on youtube and using the #FroZenHub Tag will give you a chance to qualify and let you to earn some neat rewards!\n Reward List:\n • free 1 week key\n • free 1 month key\n • free lifetime key\n • 50-200 robux\n • 300-400 robux"
-    })
+ local NoMore = Tabs.Event:AddSection("There are no Giveaways/Events yet")
     
 --script functions
 function BladeBall_Script()
@@ -125,6 +134,11 @@ end
 function MM2_Script()
 Fluent:Destroy()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/CorruptedClan/tridentsyr/main/FroZenHubV1/Games/MM2.lua"))()
+end
+
+function AnimeDimensions_Script()
+Fluent:Destroy()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CorruptedClan/tridentsyr/main/FroZenHubV1/Games/anime_dimensions.lua"))()
 end
 
 function InfiniteYield_Other()
