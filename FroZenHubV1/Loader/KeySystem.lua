@@ -1,15 +1,17 @@
-local KeySystemUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/MaGiXxScripter0/keysystemv2api/master/ui/xrer_mstudio45.lua"))()
-KeySystemUI.New({
-    ApplicationName = "FroZenHub", -- Your Key System Application Name
-    Name = "FroZen Hub V1", -- Your Script name
-    Info = "to acces FroZen Hub you have to cpmplete the key system. this will help us earn money to maintain the script.", -- Info text in the GUI, keep empty for default text.
-    DiscordInvite = "https://dsc.gg/frozen-x", -- Optional.
-    AuthType = "ip" -- Can select verification with ClientId or IP ("clientid" or "ip")
+local SyncUI = loadstring(game:HttpGet('https://raw.githubusercontent.com/Alan0947383/Coemssjsns/main/SyncV2.lua%20(2)%20(1).txt'))()
+
+SyncUI:Create({
+  Service = "frozenhubv1", --- Your actual panda auth service name
+  Name = "FroZen Hub V1", --- Your hub name
+  Discord = "https://dsc.gg/frozen-x", --- Your discord link
+  Color = "Blue",
+  LibVersion = "v2",
+  Callback = function() --- What happen if key correct
+    Load_GUI()
+  end,
+  SaveKey = true --- Save key or not
 })
-repeat task.wait() until KeySystemUI.Finished() or KeySystemUI.Closed
-if KeySystemUI.Finished() and KeySystemUI.Closed == false then
-    print("Key verified, can load script") loadstring(game:HttpGet("https://raw.githubusercontent.com/CorruptedClan/tridentsyr/main/FroZenHubV1/Loader/LoaderUI.lua"))()
-print("script loaded")
-else
-    print("Player closed the GUI.")
+
+function Load_GUI()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CorruptedClan/tridentsyr/main/FroZenHubV1/Loader/LoaderUI.lua"))()
 end
