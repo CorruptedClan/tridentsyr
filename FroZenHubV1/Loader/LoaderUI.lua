@@ -4,7 +4,7 @@ local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.
 
 local Window = Fluent:CreateWindow({
     Title = "FroZen Hub V1",
-    SubTitle = "Loader | v.0.2.12",
+    SubTitle = "Loader | v.1.3.9",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
     Acrylic = false, -- The blur may be detectable, setting this to false disables blur entirely
@@ -67,6 +67,14 @@ Tabs.Main:AddButton({
             MM2_Script()
         end
     })
+    
+Tabs.Main:AddButton({
+        Title = "Murder Vs Sheriff",
+        Description = "",
+        Callback = function()
+            MurderVsSheriff_Script()
+        end
+    })
 --other scripts 
 Tabs.Other:AddButton({
         Title = "Infinite Yield",
@@ -106,9 +114,19 @@ Update3:AddParagraph({
         Title = "April 17th 2024:",
         Content = "Obby but You're on a Bike:\n • Updated for World 24\n\nNEW GAME ADDED:\n • Anime Dimensions\n\nLoader:\n • Current giveaways/Events ended"
     })
+    
+local Update4 = Tabs.Update:AddSection("Update 4")
+Update4:AddParagraph({
+        Title = "May 1st 2024:",
+        Content = "Obby but You're on a Bike:\n • Updated for World 25 and 26\n\nNEW GAME ADDED:\n • Murder Vs Sheriff\n\nLoader:\n • New giveaways! Ends soon May 2nd at 9PM Eastern European Time join https://dsc.gg/frozen-x for a chance to win a free 1 month key"
+    })
  
 --giveaways
- local NoMore = Tabs.Event:AddSection("There are no Giveaways/Events yet")
+ local Giveaway = Tabs.Event:AddSection("Ongoing Giveaways")
+    Giveaway:AddParagraph({
+        Title = "Free 1 month key | End: May 2nd 9:00PM EET",
+        Content = "How to win?\n 1st: Subscribe to EdxymRBLX on YouTube\n 2nd: Join https://dsc.gg/frozen-x\n 3rd: Join the giveaway!"
+    })
     
 --script functions
 function BladeBall_Script()
@@ -139,6 +157,11 @@ end
 function AnimeDimensions_Script()
 Fluent:Destroy()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/CorruptedClan/tridentsyr/main/FroZenHubV1/Games/anime_dimensions.lua"))()
+end
+
+function MurderVsSheriff_Script()
+Fluent:Destroy()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CorruptedClan/tridentsyr/main/FroZenHubV1/Games/MurderVsSheriff.lua"))()
 end
 
 function InfiniteYield_Other()
