@@ -161,8 +161,8 @@ local q = {
     "Level Dimension"
 }
 local r = {"Easy", "Hard", "Nightmare", "Infinite"}
-local s = {"Capsule Series 1", "Raid Capsule", "Gear 5 Fluffy Capsule", "Esper Capsule"}
-local t = { "Tengoku Raid", "Hirito Raid", "Titan Raid", "Esper Raid" ,"Demon Lord Raid","Yomiichi Raid", "Christmas Raid","Combat Titan Raid", "Infinity Nojo Raid", "Gear 5 Fluffy Raid"}
+local s = {"Capsule Series 1", "Raid Capsule", "Gear 5 Fluffy Capsule", "Warlord Capsule", "Buff Boy Capsule", "Psycho Student Capsule"}
+local t = { "Psycho Student Raid", "Buff Boy Raid", "Warlord Raid","Tengoku Raid","Hirito Raid", "Titan Raid", "Gear 5 Fluffy Raid"}
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
