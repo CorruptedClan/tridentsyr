@@ -69,7 +69,7 @@ Tabs.Main:AddButton({
     })
     
 Tabs.Main:AddButton({
-        Title = "Murder Vs Sheriff",
+        Title = "Murder Mystery 2",
         Description = "",
         Callback = function()
             MurderVsSheriff_Script()
@@ -122,11 +122,7 @@ Update4:AddParagraph({
     })
  
 --giveaways
- local Giveaway = Tabs.Event:AddSection("Ongoing Giveaways")
-    Giveaway:AddParagraph({
-        Title = "Free 1 month key | End: May 2nd 9:00PM EET",
-        Content = "How to win?\n 1st: Subscribe to EdxymRBLX on YouTube\n 2nd: Join https://dsc.gg/frozen-x\n 3rd: Join the giveaway!"
-    })
+ local NoMore = Tabs.Event:AddSection("No current ongoing giveaways")
     
 --script functions
 function BladeBall_Script()
